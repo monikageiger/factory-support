@@ -145,7 +145,7 @@ When I received this task, I started to create some drafts on paper, which you c
 ## Backlog
 
 - Users should only be able to apply to support request that was not created by them
-- Frontend and backend should also follow and restrict how many users already subscribed and not let more people do it the required by the support request.
+- Frontend and backend should also follow and restrict how many users already subscribed and not let more people subscribe than required by the support request
 
 
 ## Extensibility
