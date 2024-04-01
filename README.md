@@ -117,9 +117,16 @@ Every sign-up event creates a new entry in the `signupEvent` table.
 
 How to run the implementation
 
-`npm run start:dev:db` in the `backend` folder to start up database on docker  
-`npm run start:dev` in the `backend` folder to start backend server  
-`npm run dev` in the `frontend` folder to start frontend server  
+Backend:
+- `cd backend`
+- `npm i` to install
+- `npm run start:dev:db` to start up database on docker  
+- `npm run start:dev` to start backend server
+
+Frontend:
+- `cd frontend`
+- `npm i`
+- `npm run dev` to start frontend server  
 
 you can create a new support request:
 
@@ -146,6 +153,7 @@ When I received this task, I started to create some drafts on paper, which you c
 
 - Users should only be able to apply to support request that was not created by them
 - Frontend and backend should also follow and restrict how many users already subscribed and not let more people subscribe than required by the support request
+- Dockerize frontend & backend
 
 
 ## Extensibility
