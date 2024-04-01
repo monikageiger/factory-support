@@ -123,8 +123,8 @@ How to run the implementation
 
 you can create a new support request:
 
-`curl --location 'http://localhost:3000/support-request/create' \
---header 'Content-Type: application/json' \
+`curl --location 'http://localhost:3000/support-request/create'
+--header 'Content-Type: application/json'
 --data '{
     "description": "Help needed with assembling internal parts for Model X",
     "workType": "assembly",
