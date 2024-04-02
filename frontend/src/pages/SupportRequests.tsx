@@ -8,10 +8,12 @@ interface SupportRequest {
     location: string
     dateOfJob: string
     requiredNumOfPeople: number
+    isUserSignedUp: boolean
 }
 
 function SupportRequests() {
     const [requests, setRequests] = useState([])
+    const [signedUp, setSignedUp] = useState<number[]>([])
 
     useEffect(() => {
         getSupportRequests().then((requests) => {
@@ -22,6 +24,8 @@ function SupportRequests() {
 
     const handleSignUpEvent = (supportRequestId: number) => {
         signupForRequest(supportRequestId)
+
+        setSignedUp((oldValue) => [supportRequestId, ...oldValue])
     }
     return (
         <>
@@ -34,8 +38,14 @@ function SupportRequests() {
                     <p>
                         Required number of people: {request.requiredNumOfPeople}
                     </p>
-                    <button onClick={() => handleSignUpEvent(request.id)}>
-                        subscribe
+                    <button
+                        onClick={() => handleSignUpEvent(request.id)}
+                        disabled={
+                            request.isUserSignedUp ||
+                            signedUp.includes(request.id)
+                        }
+                    >
+                        {request.isUserSignedUp||  signedUp.includes(request.id)  ? 'subscribed' : 'subscribe'}
                     </button>
                 </div>
             ))}

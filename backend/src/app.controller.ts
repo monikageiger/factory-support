@@ -15,7 +15,23 @@ export class AppController {
 
   @Get('/support-requests')
   async getSupportRequests(@Query('type') type: string) {
-    return await this.supportRequestRepository.find(type ? {} : {});
+    const userId = '12345abc';
+    const supportRequests = await this.supportRequestRepository.find(
+      type ? {} : {},
+    );
+    const signUpEvent = await this.signupEventRepository.find({
+      where: { userId },
+    });
+
+    return supportRequests.map((request) => {
+      return {
+        ...request,
+        isUserSignedUp: !!signUpEvent.find(
+          (event) =>
+            event.userId === userId && event.supportRequest.id === request.id,
+        ),
+      };
+    });
   }
 
   @Post('/support-request/create')
