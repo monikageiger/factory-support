@@ -160,6 +160,6 @@ When I received this task, I started to create some drafts on paper, which you c
 
 -   Email communication - create subscription possibility for receiving additional info about support requests
 -   More extensive sorting & filtering - eg. based on request creation date
--   Add notes & notifications, eg. if no-one signed up yet
+-   Add notes & notifications, eg. if no-one signed up yet, or when someon signed-up
 -   Mapping work types & factory locations in a separate table for easy maintenance
 -   Feedback system for improving volunteer experience
