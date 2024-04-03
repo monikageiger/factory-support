@@ -1,6 +1,3 @@
-Frontend is built with React + TypeScript, and backend with NestJS.
-Added a postgres db that runs with docker.
-
 # System Design
 
 ![System design overview](./systemdesign.png)
@@ -142,7 +139,7 @@ you can create a new support request:
     "createdAt": "2024-02-15"
 }'`
 
-Then, using the frontend you are going to be able to subscribe to the task created. The same user can subscribe only once to the same support request.
+After creating a few support requests, in the frontend you are going to be able to subscribe to the tasks created. The same user can subscribe only once to the same support request.
 
 ## Thought process
 
@@ -155,7 +152,7 @@ When I received this task, I started to create some drafts on paper, which you c
 - Users should only be able to apply to support request that was not created by them
 - Frontend and backend should also follow and restrict how many users already subscribed and not let more people subscribe than required by the support request
 - Dockerize frontend & backend
-- remove hardcoded default passwords
+- Remove hardcoded default passwords
 
 
 ## Extensibility
