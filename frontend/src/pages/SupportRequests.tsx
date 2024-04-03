@@ -45,7 +45,9 @@ function SupportRequests() {
                             signedUp.includes(request.id)
                         }
                     >
-                        {request.isUserSignedUp||  signedUp.includes(request.id)  ? 'subscribed' : 'subscribe'}
+                        {request.isUserSignedUp || signedUp.includes(request.id)
+                            ? 'subscribed'
+                            : 'subscribe'}
                     </button>
                 </div>
             ))}

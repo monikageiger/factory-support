@@ -54,7 +54,7 @@ A task represents a support request that volunteer office workers can sign up fo
     "id": 1,
     "description": "Help needed with assembling internal parts for car",
     "workType": "assembly",
-    "location": "Factory 2",
+    "location": "Factory #2",
     "dateOfJob": "2024-03-01",
     "requiredNumOfPeople": 1,
     "createdBy": "d816e4e8-0339-4ba6-bf82-86e9c35d80e2",
@@ -135,10 +135,10 @@ you can create a new support request:
 --data '{
     "description": "Help needed with assembling internal parts for car",
     "workType": "assembly",
-    "location": "Factory 3",
+    "location": "Factory #2",
     "dateOfJob": "2024-03-01",
     "requiredNumOfPeople": 1,
-    "createdBy": "a816w2c8-0339-4ba6-bh82-86a9x35d80e2",
+    "createdBy": "d816e4e8-0339-4ba6-bf82-86e9c35d80e2",
     "createdAt": "2024-02-15"
 }'`
 
@@ -151,15 +151,17 @@ When I received this task, I started to create some drafts on paper, which you c
 
 ## Backlog
 
+- Currently the userId is hardcoded in the codebase, with the use of a cookie based authentication, all of that would be handled in the backend, because it would be available on all api requests.
 - Users should only be able to apply to support request that was not created by them
 - Frontend and backend should also follow and restrict how many users already subscribed and not let more people subscribe than required by the support request
 - Dockerize frontend & backend
+- remove hardcoded default passwords
 
 
 ## Extensibility
 
 -   Email communication - create subscription possibility for receiving additional info about support requests
 -   More extensive sorting & filtering - eg. based on request creation date
--   Add notes & notifications, eg. if no-one signed up yet, or when someon signed-up
+-   Add notes & notifications, eg. if no-one signed up yet, or when someone signed-up
 -   Mapping work types & factory locations in a separate table for easy maintenance
 -   Feedback system for improving volunteer experience

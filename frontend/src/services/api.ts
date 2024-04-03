@@ -8,7 +8,7 @@ export const getSupportRequests = async () => {
 export const signupForRequest = async (supportRequestId: number) => {
     const signupEventData = {
         supportRequestId,
-        userId: '12345abc',
+        userId: 'q816x4c8-0339-4bb6-bf82-86v9c35d80e2',
         status: 'pending',
     }
     try {

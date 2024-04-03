@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Post } from '@nestjs/common';
 import { SupportRequest } from './modules/supportRequests/supportRequest.entity';
 import { SignupEvent } from './modules/signupEvents/signupEvent.entity';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -14,11 +14,9 @@ export class AppController {
   ) {}
 
   @Get('/support-requests')
-  async getSupportRequests(@Query('type') type: string) {
-    const userId = '12345abc';
-    const supportRequests = await this.supportRequestRepository.find(
-      type ? {} : {},
-    );
+  async getSupportRequests() {
+    const userId = 'q816x4c8-0339-4bb6-bf82-86v9c35d80e2';
+    const supportRequests = await this.supportRequestRepository.find();
     const signUpEvent = await this.signupEventRepository.find({
       where: { userId },
     });
@@ -41,8 +39,8 @@ export class AppController {
   }
 
   @Get('/signup-events')
-  async getSignupEvents(@Query('type') type: string) {
-    return await this.signupEventRepository.find(type ? {} : {});
+  async getSignupEvents() {
+    return await this.signupEventRepository.find();
   }
 
   @Post('/signup-event/create')
